@@ -46,7 +46,6 @@ dldid = {
 print(dldid["name"]) # get item from a dictionary
 dldid["handsome"] = True
 print(dldid)
-
 # Type Change
 
 age = "18"
@@ -56,4 +55,6 @@ n_age = int(age) # string to int type
 print(type(n_age))
 print(n_age)
 
+
+print(None)
 
