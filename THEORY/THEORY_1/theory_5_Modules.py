@@ -16,6 +16,6 @@ from math import fsum as sexy_sum
 
 print(sexy_sum([1,2,3,4,5,6,7]))
 
-from theory_5_Modules_calculator import plus, minus
+from THEORY.THEORY_1.theory_5_Modules_calculator import plus, minus
 
 print(plus(1,2), minus(1,2))
