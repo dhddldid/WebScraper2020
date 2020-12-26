@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from scrapper import get_jobs
+from exporter import save_to_file
 
 app = Flask("SuperScrapper")
 
@@ -9,7 +10,7 @@ db = {}
 # 누간가가 / 입력으로 들어오면
 @app.route("/")
 def home():
-    return render_template("potato.html")
+    return render_template("use_flask/potato.html")
 
 @app.route("/report")
 def report():
@@ -28,12 +29,27 @@ def report():
         return redirect("/")
 
     return render_template(
-        "report.html", 
+        "use_flask/report.html", 
         searchingBy=word, 
         resultsNumber=len(jobs),
         jobs=jobs
         )
 
+@app.route("/export")
+def export():
+    try:
+        word = request.args.get('word')
+        if not word:
+            raise Exception()
+        word = word.lower()
+        jobs = db.get(word)
+        if not jobs:
+            raise Exception()
+        save_to_file(jobs)
+        return f"lalala"
+    except:
+        return redirect("/")
+    
 # @ is decorate 함수만을 봄
 @app.route("/contact")
 def potato(): 
