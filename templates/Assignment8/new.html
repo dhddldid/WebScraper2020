@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>dhddldid News | Order By new</title>
+</head>
+<body>
+    <header>
+        <h1>dhddl News</h1>
+        <div>
+            Order by:
+            <a href="/?order_by=popular">Popular</a>
+            |
+            <string>New</string>
+        </div>
+    </header>
+    <main>
+        {% for item in new %}
+        <div>
+            <div>
+                <a href="/{{item.story_id}}"><h3>{{item.story_title}}</h3></a> (<a href="{{item.story_url}}">{{item.story_url}}</a>)
+            </div>
+            <div>
+                {{item.points}} points &nbsp;|&nbsp; {{item.author}} &nbsp;|&nbsp; {{item.num_comments}}
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </main>
+
+</body>
+</html>

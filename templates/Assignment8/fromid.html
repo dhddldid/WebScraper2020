@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>dhddldid News | Info from Id</title>
+</head>
+<body>
+    <header>
+        {% for item in article_info %}
+            <h1>{{item.title}}</h1>
+            <div>
+                {{item.points}} poirnts &nbsp;|&nbsp; {{item.author}} &nbsp;|&nbsp; <a href="{{item.url}}">{{item.url}}</a>
+            </div>
+        {% endfor %}
+    </header>
+    <main>
+        {% for item in comments %}
+        <div>
+            <strong>{{item.author}}</strong>
+            <p></p>
+            <p>{{item.text}}</p>
+            <hr>
+        </div>
+        {% endfor %}
+    </main>
+</body>
+</html>

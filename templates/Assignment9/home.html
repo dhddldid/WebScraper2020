@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+        <title>dhddl Reader</title>
+    </head>
+    <body>
+        <header>
+            <h1>Reddit Reader</h1>
+            <h3>A service to aggregate all your favourite subreddits</h3>
+        </header>
+        <main>
+            <form action="/read" method="get">
+                <input type='checkbox' name='javascript' value='on'/>r/javascript<br>
+                <input type='checkbox' name='reactjs' value='on'/>r/reactjs<br>
+                <input type='checkbox' name='reactnative' value='on'/>r/reactnative<br>
+                <input type='checkbox' name='programming' value='on'/>r/programming<br>
+                <input type='checkbox' name='css' value='on'/>r/css<br>
+                <input type='checkbox' name='golang' value='on'/>r/golang<br>
+                <input type='checkbox' name='flutter' value='on'/>r/flutter<br>
+                <input type='checkbox' name='rust' value='on'/>r/rust<br>
+                <input type='checkbox' name='django' value='on'/>r/django<br>
+                <input type='submit' value="Aggregate">
+            </form>
+        </main>
+    </body>
+</html>

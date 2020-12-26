@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+        <title>Reddit Reader</title>
+    </head>
+    <body>
+        <header>
+            <a href="/">
+                <h1>Reddit Reader</h1>
+            </a>
+
+            <div>
+                <h3>
+                    {% for searching in searching_list %}
+                        r/{{searching}}
+                    {% endfor %}
+                </h3>
+            </div>
+        </header>
+        <main>
+            {% for result in results %}
+                {% for item in result %}
+                    <div>
+                        <a href="{{item.link}}" target="_blank">{{item.title}}</a>
+                    </div>
+                    <h4>{{item.recommend}}·r/{{item.keyword}}</h4>
+                    <hr/>
+                {% endfor %}
+            {% endfor %}
+        </main>
+
+    </body>
+</html>
