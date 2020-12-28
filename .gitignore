@@ -131,3 +131,7 @@ dmypy.json
 
 # HomeWork Ignore
 Assignment/
+
+
+# .csv ignore
+*.csv
